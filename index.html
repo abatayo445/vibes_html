@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Changer with Pictures</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease-in-out;
+        }
+        h1 {
+            margin-bottom: 20px;
+            transition: all 0.5s ease-in-out;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .button-container {
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        #boysThemeBtn {
+            background-color: #1E3A8A; /* Dark blue */
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        #girlsThemeBtn {
+            background-color: #FF69B4; /* Hot pink */
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        #oldThemeBtn {
+            background-color: #696969; /* Dim grey */
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Boys Theme */
+        .boys-theme {
+            background-image: url('./img/boys1');
+        }
+        .boys-theme h1 {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        /* Girls Theme */
+        .girls-theme {
+            background-image: url('./img/girls.webp'); 
+        }
+        .girls-theme h1 {
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        /* Old Theme */
+        .old-theme {
+            background-image: url('./img/old.webp'); 
+        }
+        .old-theme h1 {
+            font-family: 'Times New Roman', serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Welcome to Theme Changer</h1>
+    <div class="button-container">
+        <button id="boysThemeBtn">Boys Theme</button>
+        <button id="girlsThemeBtn">Girls Theme</button>
+        <button id="oldThemeBtn">Old Theme</button>
+    </div>
+
+    <script>
+        // Get references to buttons
+        const boysThemeBtn = document.getElementById("boysThemeBtn");
+        const girlsThemeBtn = document.getElementById("girlsThemeBtn");
+        const oldThemeBtn = document.getElementById("oldThemeBtn");
+        const title = document.getElementById("title");
+
+        // Add event listeners to buttons
+        boysThemeBtn.addEventListener("click", () => {
+            document.body.className = "boys-theme";
+            title.textContent = "Welcome to Boys' World!";
+        });
+
+        girlsThemeBtn.addEventListener("click", () => {
+            document.body.className = "girls-theme";
+            title.textContent = "Welcome to Girls' Paradise!";
+        });
+
+        oldThemeBtn.addEventListener("click", () => {
+            document.body.className = "old-theme";
+            title.textContent = "Welcome to the Classic Era!";
+        });
+    </script>
+</body>
+</html>
